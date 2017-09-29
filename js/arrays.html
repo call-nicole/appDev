@@ -19,17 +19,17 @@
             <p id="demo"></p>
             <p id="p1"></p>
         <form id="form1">
-        Please enter your favorite character: 
+        Please enter your favorite book in the Book of Mormon: 
             <input type="text" name="name" size="20">
             
         </form> 
             <button onclick="outputName()">Submit</button>
             
-        
+            <button onclick="displaybom()">Display Books!</button>
            <script>
                
-            function outputName(){
-                var x,y,name, a, b, answer;
+            /*function outputName(){
+                var x,y;
                 
                 y = document.forms["form1"]["name"].value;
                 
@@ -38,12 +38,22 @@
                 else{
                   document.getElementById("p").innerHTML = y + "!";  
                 }
-               }
-            
-               /*var bom = ["Nephi", "Jacob", "Jarom", "Omni", "Words of Mormon", "Mosiah"];
+               }*/
                
-               
-               
+                function outputName() {
+                    var y = document.forms["form1"]["name"].value;
+                    var bom = ["Nephi", "Jacob", "Jarom", "Omni", "Words of Mormon", "Mosiah"];
+                    var books = " ";
+                    var i;
+                    for (i = 0; bom[i] != y && i < bom.length; i++){
+                    books += bom[i] + "<br>";
+                }
+                    document.getElementById("p").innerHTML = bom;
+                }
+                
+                
+                
+               /*
                for(s = 0; s < bom.length; s++){
                    document.getElementById("p1").innerHTML = bom[s];
                }
