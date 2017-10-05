@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="/appDev/css/style.css">
+    </header>
+    <body>
+        <header>
+        </header>
+        <nav>
+          
+        </nav>
+        <main>
+        <h1>Change CSS class properties using JavaScript Demonstration</h1>
+           <h2>This section is styled using only JavaScript</h2>
+            <p id="noChange">It was never styled by CSS</p>
+        
+            <h2>Changing styles by ID</h2>
+            <p id="changeId">Since each id is unique, changing the id is more simple</p>
+            
+            <button class="button" type="button" onclick="newId()">paragraph too big</button>
+            
+            
+            <h2>Here is a demonstration of changing Class styles</h2>
+            
+            <p class="change">Hello World, this is how you will change css <br>properties calling a class. This paragraph has a "change" class</p>
+            
+            <p class="change">
+            This paragraph has a "change" class as well
+            </p>
+            <p class="change"> This one too!</p>
+            
+            
+            <button class="button" type="button" onclick="showChange()">Click here to see the classes change!</button>
+            
+            <script>
+            function showChange(){
+                var p = document.getElementsByClassName('change');
+                for(i=0; i<p.length; i++){
+                    p[i].style.backgroundColor = '#ccccff';
+                    p[i].style.color= 'black';
+                    p[i].style.fontFamily='helvetica';
+                    p[i].style.fontWeight='bold';
+                }
+            }
+                
+            function newId(){
+                document.getElementById("changeId").style.fontSize= '14px';
+            }
+                document.getElementById("noChange").style.color = 'green';
+            </script>
+            
+        </main>
+    </body>
+    <footer>
+    
+    </footer>
+</html>

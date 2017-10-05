@@ -1,0 +1,18 @@
+.change{
+    color: blue;
+    font-family: cursive;
+    font-size: 15px;
+}
+
+#changeId {
+    font-family: monospace;
+    font-size: 60px;
+    color: pink;
+}
+.button {
+    padding: 5px;
+    font-size: 12px;
+    font-family: helvetica;
+    border-radius: 8px;
+    font-weight: bold;
+}

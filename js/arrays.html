@@ -17,53 +17,60 @@
         <h1>This is a loop test</h1>
             <p id="pig"></p>
             <p id="demo"></p>
-            <p id="p1"></p>
+            
         <form id="form1">
         Please enter your favorite book in the Book of Mormon: 
             <input type="text" name="name" size="20">
-            
+               
         </form> 
-            <button onclick="outputName()">Submit</button>
+        <button onclick="favBook()">Submit</button>
+        <p id = "p"> 
             
+            
+            <p>You can see your list of choices here</p>
             <button onclick="displaybom()">Display Books!</button>
+            <p id="seeChoices"></p>
            <script>
                
-            /*function outputName(){
-                var x,y;
-                
-                y = document.forms["form1"]["name"].value;
-                
-                if (y == "nic"){
-                document.getElementById("p").innerHTML = "hello " + y + "!";}
-                else{
-                  document.getElementById("p").innerHTML = y + "!";  
-                }
-               }*/
+                var bom = ["Nephi", "Jacob", "Jarom", "Omni", "Words of Mormon", "Mosiah"];
+                var bLen = bom.length;
                
-                function outputName() {
+                function favBook() {
                     var y = document.forms["form1"]["name"].value;
-                    var bom = ["Nephi", "Jacob", "Jarom", "Omni", "Words of Mormon", "Mosiah"];
                     var books = " ";
-                    var i;
-                    for (i = 0; bom[i] != y && i < bom.length; i++){
-                    books += bom[i] + "<br>";
+                    document.getElementById("demo").innerHTML = y;
+                    
+                    for (var i = 0; i < bLen; i++){
+                        book = bom[i];
+                        if (y === book){
+                            document.getElementById("p").innerHTML = "yes"; 
+                        }
+                        else if (y != book){
+                            document.getElementById("p").innerHTML = "no";  
+                        }
+                    //books += bom[i] + " <br>";
                 }
-                    document.getElementById("p").innerHTML = bom;
+                    //document.getElementById("p").innerHTML = books;
                 }
                 
                 
                 
-               /*
-               for(s = 0; s < bom.length; s++){
-                   document.getElementById("p1").innerHTML = bom[s];
+               function displaybom(){
+                var text = "<ul>"
+               for(var s = 0; s < bLen; s++){
+                   text += "<li>" + bom[s] + "</li>";
+                   
                }
-               var y = "joe";
-               document.getElementById("demo").innerHTML = y;*/
+                   text += "</ul>"
+                   document.getElementById("seeChoices").innerHTML = text;
+               }
+               
+               
         </script>
             
-            <p id = "p">
+           
                 
-            </p>
+            
             <p id="d"></p>
         </main>
         

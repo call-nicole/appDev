@@ -14,12 +14,12 @@
         <nav>
         </nav>
         <main>
-        <h1>This is a loop test</h1>
+        <h1>Functions, variables, object creation and Conditional Statements</h1>
             <p id="pig"></p>
             <p id="demo"></p>
             <p id="p1"></p>
         <form id="form1">
-        Please enter your favorite character: 
+        Please enter your name: (Hint: Nicole is the coolest name) 
             <input type="text" name="name" size="20">
             
         </form> 
@@ -27,16 +27,16 @@
             
         
            <script>
-               
+              //This is to demonstrate functions, conditional statements 
             function outputName(){
                 var x,y,name, a, b, answer;
                 
                 y = document.forms["form1"]["name"].value;
                 
-                if (y == "nic"){
+                if (y == "Nicole"){
                 document.getElementById("p").innerHTML = "hello " + y + "!";}
                 else{
-                  document.getElementById("p").innerHTML = y + "!";  
+                  document.getElementById("p").innerHTML = y + " is a funny name!";  
                 }
                }
             
