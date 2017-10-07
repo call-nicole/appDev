@@ -32,7 +32,7 @@
             <p id="seeChoices"></p>
            <script>
                
-                var bom = ["Nephi", "Jacob", "Jarom", "Omni", "Words of Mormon", "Mosiah"];
+                var bom = ["1 Nephi","2 Nephi", "Jacob", "Enos", "Jarom", "Omni", "Words of Mormon", "Mosiah", "Alma", "Helaman", "3 Nephi", "4 Nephi", "Mormon", "Ether", "Moroni"];
                 var bLen = bom.length;
                
                 function favBook() {
@@ -44,6 +44,7 @@
                         book = bom[i];
                         if (y == book){
                             document.getElementById("p").innerHTML = "yes"; 
+                            break;
                         }
                         else if (y != book){
                             document.getElementById("p").innerHTML = "no";  
