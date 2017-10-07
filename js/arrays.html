@@ -38,16 +38,16 @@
                 function favBook() {
                     var y = document.forms["form1"]["name"].value;
                     var books = " ";
-                    document.getElementById("demo").innerHTML = y;
+                    
                     
                     for (var i = 0; i < bLen; i++){
                         book = bom[i];
                         if (y == book){
-                            document.getElementById("p").innerHTML = "yes"; 
+                            document.getElementById("p").innerHTML = "Yes, " + y + " is a really good one"; 
                             break;
                         }
                         else if (y != book){
-                            document.getElementById("p").innerHTML = "no";  
+                            document.getElementById("p").innerHTML = "hmmm, I don't think " + y + " is in the Book of Mormon...";  
                         }
                     //books += bom[i] + " <br>";
                 }
