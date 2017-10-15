@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="UTF-8">
+        <title>Javascript Events</title>
+        <link rel="stylesheet" type="text/css" href="events.css">
+    
+    </header>
+    <body>
+        <header>
+        </header>
+        <nav>
+            
+        </nav>
+        <main ontouchstart = 'touch()'>
+        <h1>Some Java Script Events</h1>
+            <p id="double">This paragraph is going to change. Click once to see the color change, Click twice to see the size change. You can double click again to toggle the size back and forth</p><button type="button" onclick="change()" ondblclick="changeDouble()">Click Here</button>
+            
+            
+            <p id="hover" onmouseover="moreClear(this)" onmouseout="lessClear(this)">
+            This paragraph has a couple of functions. First of all, when you hover over it, it will become more clear, but when you move away, it becomes less clear. You may also notice it is growing and Shrinking. When you hover over it, it grows and then when the transition is over it switches to an even clearer color</p>
+            
+            <p>Below you will see a picture. Click it once and it will flip, click it twice and it will rotate</p>
+            
+            <button type="button" onClick= "flip()" ondblclick="moveSquare()">Transform!!!</button><div class="space"></div>
+            <img src="cb.jpg" id="box" >
+        </main>
+        <script>
+            function change(){
+                document.getElementById('double').style.color = 'purple';
+                
+            }
+            function changeDouble(){
+                var d = document.getElementById("double");
+                if (d.style.fontSize === '48px'){
+                    d.style.fontSize = '14px';
+                }
+                else{
+                    d.style.fontSize = '48px';
+                }
+                
+            }
+            
+            function moreClear(x){
+                x.style.color = "pink";
+            }
+            
+            function lessClear(x){
+                x.style.color = "#009999";
+            }
+            
+            document.getElementById("hover").addEventListener("transitionend", end);
+            function end(){
+                this.style.color = "white";
+            }
+            function flip(){
+                 document.getElementById("box").style.transform = "scaleX(-1)"
+            }
+            
+            function moveSquare(){
+                document.getElementById("box").style.left = "100px";
+                document.getElementById("box").style.transform = "rotate(180deg) scaleX(-1)"
+                
+            }
+            
+            
+        </script>
+    </body>
+    <footer>
+    
+    </footer>
+</html>

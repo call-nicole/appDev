@@ -1,0 +1,25 @@
+#hover{
+    font-family: Tahoma, geneva, sans-serif;
+    font-size: 20px;
+    padding: 100px;
+    background-color: #00b3b3;
+    color: #009999;
+    border-radius: 22px;
+    transition: padding 3s;
+}
+
+#hover:hover{
+    padding: 200px;
+}
+
+.space{
+    height: 20px;
+}
+
+#box{
+    width: 250px;
+    border-radius: 20px;
+    background-color: #00b3b3;
+    position: relative;
+    left: 0px;
+}
