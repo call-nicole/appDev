@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="UTF-8">
+        <title>OOP</title>
+        <link rel="stylesheet" type="text/css" href="storage.css">
+
+    </header>
+    <body>
+
+
+        <header>
+        </header>
+        <nav>
+
+        </nav>
+        <main>
+        <h1>Storing and Retrieving Data</h1>
+            <p id="paragraph">
+             This first paragraph just shows how you can retrieve something simple from local storage. When you click the button, it will retireve a color from storage and this paragraph will turn that color. </p>
+            <button type="button" onclick="retrieve()">Click here
+            </button>
+            
+            <h3>Now let's find out about some of our favorite movies!</h3>
+            <p>Click a movie to find out more</p>
+            
+            <button onclick="getInfo(0)">Easy A</button>
+            <button onclick="getInfo(1)">My Big Fat Greek Wedding</button>
+            <button onclick="getInfo(2)">Casa Blanca</button>
+            <p id = movies></p>
+            <img id="picture">
+            
+
+        </main>
+        <script src="storage.js"> 
+           
+
+
+        </script>
+    </body>
+    <footer>
+
+    </footer>
+</html>

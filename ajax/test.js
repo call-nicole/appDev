@@ -29,5 +29,5 @@
     var get = localStorage.getItem("storedJSON");
     var p = JSON.parse(get); 
     var heroes = p.members;
-    document.getElementById("demo").innerHTML = "name" + heroes[0].name;   
+    document.getElementById("demo").innerHTML = "name: " + heroes[0].name;   
        
