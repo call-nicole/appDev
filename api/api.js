@@ -1,0 +1,4 @@
+// Api Key cfaf5a037f8e81c516eb5dbc1c98908f
+// Example Request https://api.themoviedb.org/3/movie/550?api_key=cfaf5a037f8e81c516eb5dbc1c98908f
+// Read Access Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjZmFmNWEwMzdmOGU4MWM1MTZlYjVkYmMxYzk4OTA4ZiIsInN1YiI6IjU5ZWJjMWNlOTI1MTQxMTA1ZDAwMjlmZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VUlHTwIoDfs09ZJ27h6DeGBLZGDQHrCpxczTejYYuRk
+

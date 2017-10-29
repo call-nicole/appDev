@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="UTF-8">
+        <title>OOP</title>
+        <link rel="stylesheet" type="text/css" href="#">
+
+    </header>
+    <body>
+
+
+        <header>
+        </header>
+        <nav>
+
+        </nav>
+        <main>
+        <h1>Canvas, Audio and Video Tags, and DOM Manipulation</h1>
+         <div id="main">
+            
+         </div>   
+        <form id = "wordForm">
+            Enter a word you would like to see fancy: 
+            <input type="text" name="word" size="20"> 
+        </form >
+            <p><button onclick="drawWord()">Submit</button></p>
+            <div id="cnvs">
+            <canvas id="wordCanvas" width="400" height="200" style="border:1px solid #000000;"></canvas>
+            </div>
+            <p id="test"><button type="button" onclick="removeCanvas()" id="canvasButton">Click here to hide this section</button>
+            <button onclick="insertCanvas()">Click here to Insert Canvas</button></p>
+            
+            
+            
+            
+            <h2>Videos</h2>
+            <h4>Here is a simple GIF Video</h4>
+            <video width="314" height="400" autoplay loop>
+                 <source src="giphy.mp4" type="video/mp4">
+            </video>
+            
+            <h4>And here is a longer video</h4>
+            <video width = "750" controls>
+                <source src="tapestry.mp4" type="video/mp4">
+            </video>
+            <div id="audios">
+            <h4>And here is a great talk "That your Joy May be Full"</h4>
+            <audio id="audioplay" controls>
+            <source src="joy.mp3" type="audio/mp3" >
+            </audio>
+            </div>
+            
+            
+
+        </main>
+        <script src="canvas.js"> 
+           
+
+
+        </script>
+    </body>
+    <footer>
+
+    </footer>
+</html>
