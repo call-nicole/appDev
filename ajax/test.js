@@ -31,3 +31,16 @@
     var heroes = p.members;
     document.getElementById("demo").innerHTML = "name: " + heroes[0].name;   
        
+
+    function loadDocJSON(){
+        var xhttp = new XMLHttpRequest();
+        
+        xhttp.onreadystatechange = function(){
+            if (this.readyState == 4 && this.status == 200){
+                var temp = JSON.parse(this.responseText);
+                document.getElementById("xml")innerHTML = "name: " + temp.name;
+            }
+        };
+        xhttp.open("GET", "parse.json", true);
+        xhttp.send();
+    }

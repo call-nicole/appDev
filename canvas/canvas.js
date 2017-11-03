@@ -39,7 +39,8 @@ function insertCanvas(){
     i.appendChild(c);
     
    // var y = document.forms["wordForm"]["word"].value;
-    document.getElementsByTagName("canvas").id = "wordCanvas"; 
+//document.getElementsByTagName("canvas").id = "wordCanvas"; 
+    c.id = "wordCanvas";
     c.width = "400";
     c.height = "200";
    c.style.border = "1px solid black";
