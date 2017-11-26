@@ -3,7 +3,7 @@
     <header>
         <meta charset="UTF-8">
         <title>Home</title>
-        <link rel="stylesheet" type="text/css" href="#">
+        <link rel="stylesheet" type="text/css" href="app.css">
    
     </header>
     <body>
@@ -15,20 +15,62 @@
             
         </nav>
         <main>
+           <div id="head"><h1>Your Movie Search has Just begun!</h1> </div> 
             <form id="form1">
-                Please enter your Movie
+                <p>Search Movie here</p><br>
                 <input type="text" name="movie">
+                <button type="button" onclick="setup()">Get Details</button>
             </form>
-            <button type="button" onclick="setup()">Click Here</button>
+
         
             <p id="output"></p>
             
-            <div id = "output2"></div>
+            
             <img id="picture">
             
-            <p id="title"></p>
+            <h2 id="title"></h2>
+            <p id="tagline"></p>
             <p id="overview"></p>
-            <p id=""></p>
+            <img id="back" src="">
+            
+            <br>
+            <div id="addinfo">
+            <h2> Additional Information</h2>
+                <p id="address"></p>
+            <button type="button" onClick="showActors()">See the top Stars</button>
+            <button type="button" onClick="showRelease()">Movie Information</button>
+            <button type="button" onClick="showImages()">See More Images</button>
+            <button type="button" onClick="showRec()">See my Movie Recommendations</button>
+            <div id="actors">
+                
+            </div>
+            <div id="addRelease">
+                <p id="release"></p>
+                <p id="revenue"></p>
+                <p id="budget"></p>
+                <p id="runtime"></p>
+            </div>
+            <div id="addimages">
+                <img id="img1">
+                <img id="img2">
+                <img id="img3">
+                <img id="img4">
+                <img id="img5">
+                <img id="img6">
+                <img id="img7">
+            </div>
+            <div id="addRec">
+            <p id="rec1"></p>
+             <img id="rec1img"> 
+            <p id="rec2"></p>
+             <img id="rec2img"> 
+            <p id="rec3"></p>
+             <img id="rec3img"> 
+            </div>
+                
+            </div>
+            
+            
         
         </main>
         <script type="text/javascript" src="app.js"> </script>

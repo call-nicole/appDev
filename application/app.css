@@ -1,0 +1,74 @@
+/*Colors 
+dark teal: #558C89 
+Light Teal: #74AFAD 
+orange: #D9853B  
+light gray: #ECECEA*/
+@import url('https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:400,700');
+#head{
+    background-color: #74AFAD;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+        
+}
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;   
+}
+button{
+    height: auto;
+    
+    background-color: #D98538;
+    color: #ECECEA;
+    font-family: 'Lora', serif; 
+    font-size: 16px;
+}
+p {
+   font-family: 'Lora', serif; 
+}
+form{
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+input[type=text], select {
+    width: 50%;
+    padding: 10px 5px;
+    margin: 8px 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=text]:focus {
+    background-color: #ECECEA;
+}
+
+.actorimg{
+    width = 25%;
+}
+#addinfo{
+    background-color: #74AFAD; 
+    display: none;
+}
+
+
+#addRelease, #addRec p, #addimages img{
+   padding: 20px;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;   
+}
+#actors p{
+   display: flex;
+   align-items: center;
+   align-content: center;
+justify-content: flex-start;
+  padding 20px;
+}
+#actors img{
+    padding: 20px;
+    height: 100px;
+}

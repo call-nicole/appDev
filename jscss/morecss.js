@@ -24,7 +24,7 @@ function change(el, clr) {
 }
 function grow(){
     var but = document.getElementById("but");
-    but.style.webkitTransition = "width 1s";
+    but.style.transition = "width 2s linear 0s";
     but.style.width = "300px";
 }
 //function shake(){
