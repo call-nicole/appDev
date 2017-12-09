@@ -15,11 +15,11 @@
             
         </nav>
         <main>
-           <div id="head"><h1>Your Movie Search has Just begun!</h1> </div> 
+           <div id="head"><h1 id="headline">Your Movie Search has Just begun!</h1> </div> 
             <form id="form1">
                 <p>Search Movie here</p><br>
-                <input type="text" name="movie">
-                <button type="button" onclick="setup()">Get Details</button>
+                <input type="text" name="movie" id="movieSearch" onclick="searchTran()" onkeydown = "if (event.keyCode == 13) document.getElementById('searchButton').click()" >
+                <button type="button" id="searchButton" onclick="setup()" onchover="bAni()" >Get Details</button>
             </form>
 
         
@@ -29,9 +29,11 @@
             <img id="picture">
             
             <h2 id="title"></h2>
-            <p id="tagline"></p>
-            <p id="overview"></p>
+            <div class="typewriter"><p id="tagline"></p></div>
+            <div id="det" onmouseover="animate()">
             <img id="back" src="">
+            <p id="overview"></p>
+            </div>
             
             <br>
             <div id="addinfo">

@@ -1,4 +1,12 @@
 //https://developers.themoviedb.org/3/getting-started/search-and-query-for-details THE BEST DOCUMENTATION
+//If enter is pressed instead of click
+//document.getElementById("movieSearch")
+//    .addEventListener("keyup", function(event) {
+//    event.preventDefault();
+//    if (event.keyCode === 13) {
+//        document.getElementById("searchButton").click();
+//    }
+//});
 
 //Function Called with the Details Button
 function setup(){
@@ -22,11 +30,12 @@ var idJSON = new XMLHttpRequest();
         }
         idJSON.open("GET", address, true);
         idJSON.send();
-//xml http request for the deatils
-var movJSON = new XMLHttpRequest();
     
+//xml http request for the deatils localStorage.getItem("movieId")
+var movJSON = new XMLHttpRequest();
+    var id = localStorage.getItem("movieId");
     var begin="https://api.themoviedb.org/3/movie/"
-    var mId = localStorage.getItem("movieId");
+    var mId = id;
     var api = "?api_key=cfaf5a037f8e81c516eb5dbc1c98908f"
     var img = "&append_to_response=images"
     
@@ -41,7 +50,7 @@ var movJSON = new XMLHttpRequest();
             var title = data2.original_title;
             var ove = data2.overview;
             var tag = data2.tagline;
-            var back = "http://image.tmdb.org/t/p/w500" + data2.images.posters[0].file_path;
+            var back = "http://image.tmdb.org/t/p/w300" + data2.images.posters[0].file_path;
             document.getElementById("title").innerHTML = title;
             document.getElementById("tagline").innerHTML = tag;
             document.getElementById("overview").innerHTML=ove;
@@ -172,6 +181,7 @@ function showRec(){
         recJSON.send();
 }
 
+//Show the top actors
 function showActors(){
     document.getElementById("addRelease").style.display="none";
      document.getElementById("addimages").style.display="none";
@@ -193,16 +203,29 @@ function showActors(){
         var dataAct = JSON.parse(this.responseText);
             var cast = dataAct.credits.cast;
             var showTopCast;
-            var compCast
-            for (i = 0; i<=5; i++){
+            var compCast;
+            for (i=0; i<=0; i++){
+                var name = dataAct.credits.cast[i].name;
+                var character = dataAct.credits.cast[i].character;
+                var headShot =  "http://image.tmdb.org/t/p/w300" + dataAct.credits.cast[i].profile_path;
+                showTopCast = "<p> <img class='actorimg' src='" + headShot + "' > <br>" + name + " - " + character;
+                }
+            for (i = 1; i<=5; i++){
                 var name = dataAct.credits.cast[i].name;
                 var character = dataAct.credits.cast[i].character;
                 var headShot =  "http://image.tmdb.org/t/p/w300" + dataAct.credits.cast[i].profile_path;
                 showTopCast += "<p> <img class='actorimg' src='" + headShot + "' > <br>" + name + " - " + character;
             }
+            for (i=0; i<=0; i++){
+                var name = dataAct.credits.cast[i].name;
+                var character = dataAct.credits.cast[i].character;
+                
+                compCast = "<p>" + name + " - " + character + "</p>";
+            }
             for (i = 6; i<cast.length; i++){
                 var name = dataAct.credits.cast[i].name;
                 var character = dataAct.credits.cast[i].character;
+                
                 compCast += "<p>" + name + " - " + character + "</p>";
             }
             
@@ -215,4 +238,21 @@ function showActors(){
     actJSON.open("GET", address, true);
         actJSON.send();
 }
+
+//JS CSS Work all done below
+
+    function searchTran(){
+        var e = document.getElementById("movieSearch");
+        e.style.transition = "background 3.0s linear 0s";
+        e.style.transition = "border 3.0s linear 0s";
+       e.style.border = "1.5px solid #D9853B"
+       e.style.background = "#ECECEA";
+    }
+
+    function animate(){
+        document.getElementById("overview").innerHTML = "Work";
+        //var img = document.getElementById("back");
+        // img.classList.add('horizTranslate');
+    }
+
 

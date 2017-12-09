@@ -11,12 +11,14 @@ light gray: #ECECEA*/
     display: flex;
     justify-content: center;
     align-items: center;
-    
-        
+          
 }
 h1, h2 {
-    font-family: 'Montserrat', sans-serif;   
+    font-family: 'Montserrat', sans-serif;  
+    font-size: 250%;
+    margin: 0px;
 }
+
 button{
     height: auto;
     
@@ -38,22 +40,22 @@ input[type=text], select {
     padding: 10px 5px;
     margin: 8px 8px;
     display: inline-block;
-    border: 1px solid #ccc;
+/*    border: 1px solid #ccc;*/
     border-radius: 4px;
     box-sizing: border-box;
 }
 input[type=text]:focus {
-    background-color: #ECECEA;
+/*    background-color: #ECECEA;*/
 }
 
 .actorimg{
     width = 25%;
 }
 #addinfo{
+    height = 500px;
     background-color: #74AFAD; 
     display: none;
 }
-
 
 #addRelease, #addRec p, #addimages img{
    padding: 20px;
@@ -71,4 +73,74 @@ justify-content: flex-start;
 #actors img{
     padding: 20px;
     height: 100px;
+}
+/*ALL CSS ANIMATIONS< TRANSITIONS, ETC ARE IN HERE*/
+
+@keyframes text{
+    0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+    color: #D9853B; 
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#headline{
+    animation: text 3s;
+}
+
+.horizTranslate {
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  margin-left: 50% !important;
+}
+
+
+/*
+#head h1{
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  /*border-right: .05em solid black; The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .05em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 87% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #D9853B; }
+}
+*/
+
+
+
+@media screen and (min-width: 800px){
+    #det{
+        display: flex;
+    }
+    #back{
+        height: 50%l
+    }
+    #overview{
+        margin-top: 0em;
+        margin-left: 10px;
+    }
 }
