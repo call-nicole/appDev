@@ -3,7 +3,7 @@
     <header>
         <meta charset="UTF-8">
         <title>Home</title>
-        <link rel="stylesheet" type="text/css" href="app.css">
+        <link rel="stylesheet" type="text/css" href="test.css">
    
     </header>
     <body>
@@ -19,7 +19,7 @@
             <form id="form1">
                 <p>Search Movie here</p><br>
                 <input type="text" name="movie" id="movieSearch" onclick="searchTran()" onkeydown = "if (event.keyCode == 13) document.getElementById('searchButton').click()" >
-                <button type="button" id="searchButton" onclick="setup()" onclick="setup()"  onchover="bAni()" >Get Details</button>
+                <button type="button" id="searchButton" onclick="setup()" onchover="bAni()" >Get Details</button>
             </form>
 
         
@@ -39,10 +39,10 @@
             <div id="addinfo">
             <h2> Additional Information</h2>
                 <p id="address"></p>
-            <button type="button" onClick="showActors()" class="addInfo">See the top Stars</button>
-            <button type="button" onClick="showRelease()" class="addInfo">Movie Information</button>
-            <button type="button" onClick="showImages()" class="addInfo">See More Images</button>
-            <button type="button" onClick="showRec()" class="addInfo">See my Movie Recommendations</button>
+            <button type="button" onClick="showActors()">See the top Stars</button>
+            <button type="button" onClick="showRelease()">Movie Information</button>
+            <button type="button" onClick="showImages()">See More Images</button>
+            <button type="button" onClick="showRec()">See my Movie Recommendations</button>
             <div id="actors">
                 
             </div>
@@ -63,11 +63,11 @@
             </div>
             <div id="addRec">
             <p id="rec1"></p>
-             <img class="recImg" id="rec1img"> 
+             <img id="rec1img"> 
             <p id="rec2"></p>
-             <img class="recImg" id="rec2img"> 
+             <img id="rec2img"> 
             <p id="rec3"></p>
-             <img class="recImg" id="rec3img"> 
+             <img id="rec3img"> 
             </div>
                 
             </div>
@@ -75,7 +75,7 @@
             
         
         </main>
-        <script type="text/javascript" src="app.js"> </script>
+        <script type="text/javascript" src="test.js"> </script>
         
        
     </body>

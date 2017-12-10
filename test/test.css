@@ -74,17 +74,6 @@ justify-content: flex-start;
     padding: 20px;
     height: 100px;
 }
-
-.recImg{
-    display: block;
-    margin: auto;
-    
-}
-
-#rec1{
-    display: flex;
-    justify-content: space-around;
-}
 /*ALL CSS ANIMATIONS< TRANSITIONS, ETC ARE IN HERE*/
 
 @keyframes text{
@@ -93,7 +82,7 @@ justify-content: flex-start;
     opacity: 0;
   }
   60% {
-    transform: scale(1);
+    transform: scale(1.2);
     opacity: 1;
     color: #D9853B; 
   }
@@ -113,25 +102,6 @@ justify-content: flex-start;
   -o-transition: 3s;
   transition: 3s;
   margin-left: 50% !important;
-}
-
-.addInfo:hover{
-    animation: buttonColor 1.5s infinite;
-    background-color: #ECECEA; 
-    color: #558C89;
-}
-
-@keyframes buttonColor{
-    0%{
-        transform: scale(1);
-    }
-    50%{
-        transform: scale(.85);
-    }
-    100%{
-        transform: scale(1);
-        
-    }
 }
 
 

@@ -10,11 +10,12 @@
 
 //Function Called with the Details Button
 function setup(){
+
 //This gets the movie id to set up the address to get the details
     document.getElementById("addinfo").style.display="inline-block";
     var y = document.forms["form1"]["movie"].value;
-        localStorage.setItem("search", y);
-    var mv = localStorage.getItem("search");
+        //localStorage.setItem("search", y);
+   // var mv = localStorage.getItem("search");
     //document.getElementById("output").innerHTML=mv;
 //xmlhttp request for the ID
 var idJSON = new XMLHttpRequest();
@@ -31,7 +32,7 @@ var idJSON = new XMLHttpRequest();
         idJSON.open("GET", address, true);
         idJSON.send();
     
-//xml http request for the deatils 
+//xml http request for the deatils localStorage.getItem("movieId")
 var movJSON = new XMLHttpRequest();
     var id = localStorage.getItem("movieId");
     var begin="https://api.themoviedb.org/3/movie/"
@@ -42,7 +43,7 @@ var movJSON = new XMLHttpRequest();
     var address2 = begin + mId + api + img;
    
 
-    //document.getElementById("output").innerHTML = address2
+    document.getElementById("output").innerHTML = address2
 
     movJSON.onreadystatechange = function(){
         if(this.readyState === 4 && this.status === 200) {
@@ -81,7 +82,7 @@ function showRelease(){
     
     var address = begin + mId + api + cred;
     
-    //document.getElementById("address").innerHTML = address;
+    document.getElementById("address").innerHTML = address;
 
     relJSON.onreadystatechange = function(){
         if(this.readyState === 4 && this.status === 200) {
@@ -157,21 +158,21 @@ function showRec(){
             var rec1 = data4.recommendations.results[0].original_title;
             var rec1In = data4.recommendations.results[0].overview;
             var rec1img = "http://image.tmdb.org/t/p/w300" + data4.recommendations.results[0].poster_path;
-            document.getElementById("rec1").innerHTML = "<h3>" + rec1 + "</h3>" + "<p>" + rec1In + "</p>";
+            document.getElementById("rec1").innerHTML = "<h3>" + rec1 + "</h3>" + rec1In;
             document.getElementById("rec1img").src = rec1img; 
             
             //Recommendation 2 
             var rec2 = data4.recommendations.results[1].original_title;
             var rec2In = data4.recommendations.results[1].overview;
             var rec2img = "http://image.tmdb.org/t/p/w300" + data4.recommendations.results[1].poster_path;
-            document.getElementById("rec2").innerHTML = "<h3>" + rec2 + "</h3>" + "<p>" + rec2In + "</p>";
+            document.getElementById("rec2").innerHTML = "<h3>" + rec2 + "</h3>" + rec2In;
             document.getElementById("rec2img").src = rec2img; 
             
             //Recommendation 3 
             var rec3 = data4.recommendations.results[2].original_title;
             var rec3In = data4.recommendations.results[2].overview;
             var rec3img = "http://image.tmdb.org/t/p/w300" + data4.recommendations.results[2].poster_path;
-            document.getElementById("rec3").innerHTML = "<h3>" + rec3 + "</h3>" + "<p>" + rec3In + "</p>";
+            document.getElementById("rec3").innerHTML = "<h3>" + rec3 + "</h3>" + rec3In;
             document.getElementById("rec3img").src = rec3img; 
             
             
@@ -197,7 +198,7 @@ function showActors(){
     
     var address = begin + mId + api + cred;
     
-   // document.getElementById("address").innerHTML = address;
+    document.getElementById("address").innerHTML = address;
 
     actJSON.onreadystatechange = function(){
         if(this.readyState === 4 && this.status === 200) {
@@ -256,9 +257,4 @@ function showActors(){
         // img.classList.add('horizTranslate');
     }
 
-    
-
-    function click2(){
-        document.getElementById("searchButton").click();
-    }
 
