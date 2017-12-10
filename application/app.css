@@ -63,7 +63,9 @@ input[type=text]:focus {
     display: block;
     margin: auto;
 }
-
+#addRelease{
+    text-align: center;
+}
 
 #addRelease, #addRec p, #addimages img{
    padding: 20px;
