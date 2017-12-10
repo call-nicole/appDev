@@ -12,10 +12,10 @@
     function setup() {
     //This gets the movie id to set up the address to get the details
         document.getElementById("addinfo").style.display = "inline-block";
-        //var y = document.forms["form1"]["movie"].value;
-            //localStorage.setItem("search", y);
-       // var mv = localStorage.getItem("search");
-        //document.getElementById("output").innerHTML=mv;
+                //var y = document.forms["form1"]["movie"].value;
+                //localStorage.setItem("search", y);
+                // var mv = localStorage.getItem("search");
+                //document.getElementById("output").innerHTML=mv;
     //xmlhttp request for the ID
     var idJSON = new XMLHttpRequest();
 
@@ -244,10 +244,14 @@
 
         function searchTran(){
             var e = document.getElementById("movieSearch");
-            e.style.transition = "background-color 3.0s linear 0s";
             e.style.transition = "border 3.0s linear 0s";
-           e.style.border = "1.5px solid #D9853B"
-           e.style.backgroundColor = "#ECECEA";
+            e.style.border = "1.5px solid #D9853B";
+           
+        }
+        function backTran(){
+            var e = document.getElementById("movieSearch");
+            e.style.transition = "background-color 2.0s linear 0s";
+            e.style.backgroundColor = "#ECECEA";
         }
 
         function animate(){
