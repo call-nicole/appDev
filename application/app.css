@@ -54,8 +54,16 @@ input[type=text]:focus {
 #addinfo{
     height = 500px;
     background-color: #74AFAD; 
+    width: 100%;
     display: none;
 }
+
+.reformat{
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
 
 #addRelease, #addRec p, #addimages img{
    padding: 20px;
@@ -77,8 +85,7 @@ justify-content: flex-start;
 
 .recImg{
     display: block;
-    margin: auto;
-    
+    margin: auto;    
 }
 
 #rec1{
