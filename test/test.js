@@ -26,45 +26,56 @@ var idJSON = new XMLHttpRequest();
             if(this.readyState === 4 && this.status === 200) {
                 var data = JSON.parse(this.responseText);
                var id = data.results[0].id;
-               localStorage.setItem('movieId', id);  
+                localStorage.setItem('movieId', id); 
+                
+            var title = data.results[0].title;
+            var ove = data.results[0].overview;
+            //var tag = data.tagline;
+            var back = "http://image.tmdb.org/t/p/w300" + data.results[0].poster_path;
+            document.getElementById("title").innerHTML = title;
+            //document.getElementById("tagline").innerHTML = tag;
+            document.getElementById("overview").innerHTML=ove;
+            document.getElementById("back").src = back;
             }
         }
         idJSON.open("GET", address, true);
         idJSON.send();
-    
+
+}
 //xml http request for the deatils localStorage.getItem("movieId")
-var movJSON = new XMLHttpRequest();
-    var id = localStorage.getItem("movieId");
-    var begin="https://api.themoviedb.org/3/movie/"
-    var mId = id;
-    var api = "?api_key=cfaf5a037f8e81c516eb5dbc1c98908f"
-    var img = "&append_to_response=images"
     
-    var address2 = begin + mId + api + img;
-   
-
-    document.getElementById("output").innerHTML = address2
-
-    movJSON.onreadystatechange = function(){
-        if(this.readyState === 4 && this.status === 200) {
-        var data2 = JSON.parse(this.responseText);
-            var title = data2.original_title;
-            var ove = data2.overview;
-            var tag = data2.tagline;
-            var back = "http://image.tmdb.org/t/p/w300" + data2.images.posters[0].file_path;
-            document.getElementById("title").innerHTML = title;
-            document.getElementById("tagline").innerHTML = tag;
-            document.getElementById("overview").innerHTML=ove;
-            document.getElementById("back").src = back;
-            
-        
-        }
-    }
-    movJSON.open("GET", address2, true);
-        movJSON.send();
-    
-    document.getElementById("det").addEventListener("onmouseover", animate);
-    
+//var movJSON = new XMLHttpRequest();
+//    var id = localStorage.getItem("movieId");
+//    var begin="https://api.themoviedb.org/3/movie/"
+//    var mId = id;
+//    var api = "?api_key=cfaf5a037f8e81c516eb5dbc1c98908f"
+//    var img = "&append_to_response=images"
+//    
+//    var address2 = begin + mId + api + img;
+//   
+//
+//    document.getElementById("output").innerHTML = address2
+//
+//    movJSON.onreadystatechange = function(){
+//            if(this.readyState === 4 && this.status === 200) {
+//            var data2 = JSON.parse(this.responseText);
+//            var title = data2.original_title;
+//            var ove = data2.overview;
+//            var tag = data2.tagline;
+//            var back = "http://image.tmdb.org/t/p/w300" + data2.images.posters[0].file_path;
+//            document.getElementById("title").innerHTML = title;
+//            document.getElementById("tagline").innerHTML = tag;
+//            document.getElementById("overview").innerHTML=ove;
+//            document.getElementById("back").src = back;
+//            
+//        
+//        }
+//    }
+//    movJSON.open("GET", address2, true);
+//        movJSON.send();
+//    
+//    document.getElementById("det").addEventListener("onmouseover", animate);
+//    
 }
 //Show Release Information
 function showRelease(){

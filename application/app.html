@@ -2,6 +2,7 @@
 <html>
     <header>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home</title>
         <link rel="stylesheet" type="text/css" href="app.css">
    
@@ -18,20 +19,13 @@
            <div id="head"><h1 id="headline">Your Movie Search has Just begun!</h1> </div> 
             <form id="form1">
                 <p>Search Movie here</p><br>
-                <input type="text" name="movie" id="movieSearch" onclick="backTran()" >
-                <button type="button" id="searchButton" onclick="setup()" onclick="setup()"  onchover="bAni()" >Get Details</button>
+                <input type="text" name="movie" placeholder="Search your Movie" id="movieSearch" onclick="backTran()" >
+                <button type="button" id="searchButton" onclick="setup()" class="addInfo">Get Details</button>
             </form>
-
-        
-            <p id="output"></p>
-            
-            
-            <img id="picture">
             
             <h2 id="title"></h2>
-            <div class="typewriter"><p id="tagline"></p></div>
             <div id="det">
-            <img id="back" src="">
+            <img id="back">
             <p id="overview"></p>
             </div>
             
@@ -39,13 +33,17 @@
             <div id="addinfo">
             <h2> Additional Information</h2>
                 <p id="address"></p>
-            <button type="button" onClick="showActors()" class="addInfo">See the top Stars</button>
+            <button type="button" onClick="showActors()" class="addInfo">The top Stars</button>
             <button type="button" onClick="showRelease()" class="addInfo">More Information</button>
-            <button type="button" onClick="showImages()" class="addInfo">See More Images</button>
-            <button type="button" onClick="showRec()" class="addInfo">See my Movie Recommendations</button>
-            <div id="actors">
-                
+            <button type="button" onClick="showImages()" class="addInfo">More Images</button>
+            <button type="button" onClick="showRec()" class="addInfo">My Recommendations</button>
+            
+            <div id="topactors">
+             <h3 id="introact"></h3>   
             </div>
+            <div id="actors">
+            </div>
+            
             <div id="addRelease">
                 <h3 id="release"></h3>
                 <h3 id="revenue"></h3>

@@ -9,67 +9,49 @@
     //});
 
     //Function Called with the Details Button
-    function setup() {
-    //This gets the movie id to set up the address to get the details
-        document.getElementById("addinfo").style.display = "inline-block";
-                //var y = document.forms["form1"]["movie"].value;
-                //localStorage.setItem("search", y);
-                // var mv = localStorage.getItem("search");
-                //document.getElementById("output").innerHTML=mv;
-    //xmlhttp request for the ID
-    var idJSON = new XMLHttpRequest();
+   
+//Function Called with the Details Button
+function setup(){
+     document.getElementById("addinfo").style.display="inline-block";
+    document.getElementById("addRelease").style.display="none";
+         document.getElementById("addimages").style.display="none";
+         document.getElementById("addRec").style.display="none";
+        document.getElementById("topactors").style.display="none";
+         document.getElementById("actors").style.display="none";
+    var y = document.forms["form1"]["movie"].value;
+var idJSON = new XMLHttpRequest();
+       
 
-            var address = "https://api.themoviedb.org/3/search/movie?api_key=cfaf5a037f8e81c516eb5dbc1c98908f&query=" + document.forms["form1"]["movie"].value;
-
-            idJSON.onreadystatechange = function() {
-                if(this.readyState === 4 && this.status === 200) {
-                    var data = JSON.parse(this.responseText);
-                   //var id = data.results[0].id;
-                   localStorage.setItem('movieId', data.results[0].id);  
-                }
-            }
-            idJSON.open("GET", address, true);
-            idJSON.send();
-
-    //xml http request for the deatils 
-    var movJSON = new XMLHttpRequest();
-        var id = localStorage.getItem("movieId");
-        var begin="https://api.themoviedb.org/3/movie/"
-        var mId = id;
-        var api = "?api_key=cfaf5a037f8e81c516eb5dbc1c98908f"
-        var img = "&append_to_response=images"
-
-        var address2 = begin + mId + api + img;
-
-
-        //document.getElementById("output").innerHTML = address2
-
-        movJSON.onreadystatechange = function(){
+        var address = "https://api.themoviedb.org/3/search/movie?api_key=cfaf5a037f8e81c516eb5dbc1c98908f&query=" + y;
+        
+        idJSON.onreadystatechange = function() {
             if(this.readyState === 4 && this.status === 200) {
-            var data2 = JSON.parse(this.responseText);
-                var title = data2.original_title;
-                var ove = data2.overview;
-                var tag = data2.tagline;
-                var back = "http://image.tmdb.org/t/p/w300" + data2.images.posters[0].file_path;
-                document.getElementById("title").innerHTML = title;
-                document.getElementById("tagline").innerHTML = tag;
-                document.getElementById("overview").innerHTML=ove;
-                document.getElementById("back").src = back;
-
-
+                var data = JSON.parse(this.responseText);
+               var id = data.results[0].id;
+                localStorage.setItem('movieId', id); 
+                
+            var title = data.results[0].title;
+            var ove = data.results[0].overview;
+            //var tag = data.tagline;
+            var back = "http://image.tmdb.org/t/p/w300" + data.results[0].poster_path;
+            document.getElementById("title").innerHTML = title;
+            //document.getElementById("tagline").innerHTML = tag;
+            document.getElementById("overview").innerHTML=ove;
+            document.getElementById("back").src = back;
             }
         }
-        movJSON.open("GET", address2, true);
-            movJSON.send();
+        idJSON.open("GET", address, true);
+        idJSON.send();
 
-        document.getElementById("det").addEventListener("onmouseover", animate);
+}
 
-    }
+
     //Show Release Information
     function showRelease(){
         document.getElementById("addRelease").style.display="inline";
          document.getElementById("addimages").style.display="none";
          document.getElementById("addRec").style.display="none";
+        document.getElementById("topactors").style.display="none";
          document.getElementById("actors").style.display="none";
 
         var relJSON = new XMLHttpRequest();
@@ -107,6 +89,7 @@
         document.getElementById("addRelease").style.display="none";
          document.getElementById("addimages").style.display="inline";
          document.getElementById("addRec").style.display="none";
+        document.getElementById("topactors").style.display="none";
          document.getElementById("actors").style.display="none";
         var imgJSON = new XMLHttpRequest();
 
@@ -140,6 +123,7 @@
         document.getElementById("addRelease").style.display="none";
          document.getElementById("addimages").style.display="none";
          document.getElementById("addRec").style.display="inline";
+         document.getElementById("topactors").style.display="none";
          document.getElementById("actors").style.display="none";
         var recJSON = new XMLHttpRequest();
 
@@ -187,7 +171,8 @@
         document.getElementById("addRelease").style.display="none";
          document.getElementById("addimages").style.display="none";
          document.getElementById("addRec").style.display="none";
-         document.getElementById("actors").style.display="inline";
+        document.getElementById("topactors").style.display="flex";
+         document.getElementById("actors").style.display="flex";
          var actJSON = new XMLHttpRequest();
 
         var begin="https://api.themoviedb.org/3/movie/"
@@ -229,9 +214,10 @@
 
                     compCast += "<p>" + name + " - " + character + "</p>";
                 }
-
-                document.getElementById("actors").innerHTML = "<h3>The Top Cast is </h3>" + showTopCast + "<h3> The Rest of the Cast </h3>" + compCast;
-
+                
+                document.getElementById("topactors").innerHTML = showTopCast;
+                document.getElementById("actors").innerHTML = "<h3> The Rest of the Cast </h3>" + compCast;
+                
 
 
             }
