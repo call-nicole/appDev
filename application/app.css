@@ -63,7 +63,13 @@ input[type=text]:focus {
     background-color: #74AFAD; 
     width: 100%;
     display: none;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
+div h2{
+    padding-left: 10px;
+}
+
 #back{
     display: block;
     width: 70%;
@@ -185,5 +191,20 @@ input[type=text]:focus {
     #overview{
         margin-top: 0em;
         margin-left: 10px;
+    }
+    @keyframes appear{
+        0%{
+            opacity: 0;
+        }
+        50%{
+            opacity: .5;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    .ani:hover {
+        animation: appear 4s;
+        
     }
 }

@@ -51,7 +51,7 @@ var idJSON = new XMLHttpRequest();
         document.getElementById("addRelease").style.display="inline";
          document.getElementById("addimages").style.display="none";
          document.getElementById("addRec").style.display="none";
-        document.getElementById("topactors").style.display="none";
+       document.getElementById("topactors").style.display="none";
          document.getElementById("actors").style.display="none";
 
         var relJSON = new XMLHttpRequest();
@@ -74,9 +74,13 @@ var idJSON = new XMLHttpRequest();
                 var runtime = data.runtime
 
                 document.getElementById("release").innerHTML = "It was released on " + release;
+                document.getElementById("release").style.animation = "appear 1s";
                 document.getElementById("budget").innerHTML = "Their budget was $" + budget;
+                document.getElementById("budget").style.animation = "appear 1s"
                 document.getElementById("revenue").innerHTML = "It Made $" + revenue + " in Revenue";
+                document.getElementById("revenue").style.animation = "appear 1s";
                 document.getElementById("runtime").innerHTML = "The Runtime is " + runtime + " Minutes";
+                document.getElementById("runtime").style.animation = "appear 1s";
 
             }
         }
@@ -109,10 +113,15 @@ var idJSON = new XMLHttpRequest();
                 var img4 = "http://image.tmdb.org/t/p/w300" + data3.images.backdrops[3].file_path;
                 var img5 = "http://image.tmdb.org/t/p/w300" + data3.images.backdrops[4].file_path;
                  document.getElementById("img1").src = img1;
+                document.getElementById("img1").style.animation = "appear 1s";
                 document.getElementById("img2").src = img2;
+                document.getElementById("img2").style.animation = "appear 1s";
                 document.getElementById("img3").src = img3;
+                document.getElementById("img3").style.animation = "appear 1s";
                 document.getElementById("img4").src = img4;
+                document.getElementById("img4").style.animation = "appear 1s";
                 document.getElementById("img5").src = img5;  
+                document.getElementById("img5").style.animation = "appear 1s";
             }
         }
         imgJSON.open("GET", addressimg, true);
@@ -142,21 +151,27 @@ var idJSON = new XMLHttpRequest();
                 var rec1In = data4.recommendations.results[0].overview;
                 var rec1img = "http://image.tmdb.org/t/p/w300" + data4.recommendations.results[0].poster_path;
                 document.getElementById("rec1").innerHTML = "<h3>" + rec1 + "</h3>" + "<p>" + rec1In + "</p>";
+                document.getElementById("rec1").style.animation = "appear 1s";
                 document.getElementById("rec1img").src = rec1img; 
+                document.getElementById("rec1img").style.animation = "appear 1s";
 
                 //Recommendation 2 
                 var rec2 = data4.recommendations.results[1].original_title;
                 var rec2In = data4.recommendations.results[1].overview;
                 var rec2img = "http://image.tmdb.org/t/p/w300" + data4.recommendations.results[1].poster_path;
                 document.getElementById("rec2").innerHTML = "<h3>" + rec2 + "</h3>" + "<p>" + rec2In + "</p>";
+                document.getElementById("rec2").style.animation = "appear 1s";
                 document.getElementById("rec2img").src = rec2img; 
+                document.getElementById("rec2img").style.animation = "appear 1s";
 
                 //Recommendation 3 
                 var rec3 = data4.recommendations.results[2].original_title;
                 var rec3In = data4.recommendations.results[2].overview;
                 var rec3img = "http://image.tmdb.org/t/p/w300" + data4.recommendations.results[2].poster_path;
                 document.getElementById("rec3").innerHTML = "<h3>" + rec3 + "</h3>" + "<p>" + rec3In + "</p>";
+                document.getElementById("rec3").style.animation = "appear 1s";
                 document.getElementById("rec3img").src = rec3img; 
+                document.getElementById("rec3img").style.animation = "appear 1s";
 
 
 
