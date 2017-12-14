@@ -12,12 +12,6 @@
    
 //Function Called with the Details Button
 function setup(){
-     document.getElementById("addinfo").style.display="inline-block";
-    document.getElementById("addRelease").style.display="none";
-         document.getElementById("addimages").style.display="none";
-         document.getElementById("addRec").style.display="none";
-        document.getElementById("topactors").style.display="none";
-         document.getElementById("actors").style.display="none";
     var y = document.forms["form1"]["movie"].value;
 var idJSON = new XMLHttpRequest();
        
@@ -42,6 +36,13 @@ var idJSON = new XMLHttpRequest();
         }
         idJSON.open("GET", address, true);
         idJSON.send();
+    
+    document.getElementById("addinfo").style.display="inline-block";
+    document.getElementById("addRelease").style.display="none";
+         document.getElementById("addimages").style.display="none";
+         document.getElementById("addRec").style.display="none";
+        document.getElementById("topactors").style.display="none";
+         document.getElementById("actors").style.display="none";
 
 }
 
@@ -215,7 +216,7 @@ var idJSON = new XMLHttpRequest();
                     var name = dataAct.credits.cast[i].name;
                     var character = dataAct.credits.cast[i].character;
                     var headShot =  "http://image.tmdb.org/t/p/w300" + dataAct.credits.cast[i].profile_path;
-                    showTopCast += "<p> <img class='actorimg' src='" + headShot + "' > <br>" + name + " - " + character;
+                    showTopCast += "<p class='ap'> <img class='actorimg' src='" + headShot + "' > <br>" + name + " - " + character;
                 }
                 for (i=0; i<=0; i++){
                     var name = dataAct.credits.cast[i].name;
@@ -239,6 +240,12 @@ var idJSON = new XMLHttpRequest();
         }
         actJSON.open("GET", address, true);
             actJSON.send();
+        
+         var a = document.getElementsByClassName("ap");
+                    for(i=0; i<a.length; i++){
+                        a[i].style.animation = "appear 1s";
+                    }
+    
     }
 
     //JS CSS Work all done below
